@@ -1340,6 +1340,10 @@ html:-moz-full-screen-ancestor {
 
   /* custom css */
 
+.reveal section.intro p{
+  font-size: 30px;
+}
+
 .reveal section#about-me{
   text-align: left;
 }
