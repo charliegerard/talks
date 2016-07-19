@@ -1,0 +1,284 @@
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Experimenting with Creative Technologies</title>
+
+		<meta name="description" content="A talk on creative technologies">
+		<meta name="author" content="Charlie Gerard">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,300,200,500,600,700,900' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal campjs-talk">
+
+			<div class="slides">
+				<section class="intro">
+					<h1 class="small-title">Experimenting with</h1>
+					<h3 class="big-subtitle">Creative Technologies</h3>
+					<p>
+						<small>Created by <a href="http://github.com/charliegerard">Charlie Gerard</a> / <a href="http://twitter.com/charlie__gerard">@charlie__gerard</a></small>
+					</p>
+				</section>
+
+				<section id="about-me">
+					<img src="images/profile.gif">
+					<div class="content">
+						<h3>About me</h3>
+						<p>Software Developer @ThoughtWorks by day</p>
+						<p>Maker & Creative coder by night</p>
+						<p>Passionate about hardware, Internet of Things and creative coding</p>
+					</div>
+				</section>
+
+				<section class="topic">
+					<h3>What is this talk about?</h3>
+					<ul>
+						<li>Tools</li>
+						<li>Experiments</li>
+						<li>Limits</li>
+						<li>Learnings</li>
+						<li>Resources</li>
+					</ul>
+				</section>
+
+				<section class="failure-slide">
+					<h3>Most importantly this talk is about</h3>
+					<div class="fragment">
+						<h3 class='failure'>Failure</h3>
+						<img src="images/fail.gif" alt="" style="width: 680px; height: 400px" />
+						<!-- <iframe src="//giphy.com/embed/pcC2u7rl89b44" width="680" height="450" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
+					</div>
+				</section>
+
+				<section id="tools">
+					<h3>Tools</h3>
+					<div class="tool">
+						<a href="https://www.arduino.cc/" target="_blank"><img src="images/arduino.png" alt="" /></a>
+						<p>Arduino</p>
+					</div>
+					<div class="tool">
+						<a href="raspberrypi.org" target="_blank"><img src="images/raspberry_pi.png" alt="" /></a>
+						<p>Raspberry Pi</p>
+					</div>
+					<div class="tool">
+						<a href="https://www.particle.io/" target="_blank"><img src="images/photon.jpg" style="width: 70px;" alt="" /></a>
+						<p>Particle Photon</p>
+					</div>
+					<div class="tool">
+						<a href="https://www.leapmotion.com/" target="_blank"><img src="images/leap-motion.png" alt="" /></a>
+						<p>Leap Motion</p>
+					</div>
+					<div class="tool">
+						<a href="http://www.sphero.com/" target="_blank"><img src="images/spherojs.jpg" style="width: 80px;" alt="" /></a>
+						<p>Sphero</p>
+					</div>
+					<div class="tool">
+						<a href="https://www.myo.com/" target="_blank"><img src="images/myo-armband.png" style="width: 90px;" alt="" /></a>
+						<p>Myo armband</p>
+					</div>
+					<div class="tool">
+						<a href="http://neurosky.com/" target="_blank"><img src="images/neurosky-node.jpg" alt="" /></a>
+						<p>Neurosky</p>
+					</div>
+					<div class="tool">
+						<a href="http://emotiv.com" target="_blank"><img src="images/EPOC_Emotiv.png" alt="" /></a>
+						<p>Emotiv EPOC</p>
+					</div>
+					<div class="tool">
+						<a href="http://www.parrot.com/usa/" target="_blank"><img src="images/drone.jpg" alt="" /></a>
+						<p>Drone</p>
+					</div>
+					<aside class="notes">
+						<ul>
+							<p>
+								Here's a few devices I've experimented with and all of them can be programmed for with JavaScript.
+							</p>
+						</ul>
+					</aside>
+				</section>
+
+				<section id="frameworks">
+					<h3>Programming languages</h3>
+					<div class="framework">
+						<a href="http://johnny-five.io/" target="_blank"><img src="images/nodebots.png" alt="" /></a>
+						<p>JavaScript</p>
+					</div>
+
+					<div class="framework">
+						<a href="http://johnny-five.io/" target="_blank"><img src="images/nodebots.png" alt="" /></a>
+						<p>C++</p>
+					</div>
+				</section>
+
+				<section class="demos">
+					<section>
+						<h3>Experiments & Demos</h3>
+						<img src="images/demos.gif" style="width: 700px">
+					</section>
+
+					<section>
+						<h3>Motion controlled Sphero & Drone</h3>
+						<img src="images/devices.png">
+					</section>
+
+					<section>
+						<h3>Motion controlled marble maze <span>(not mine)</span></h3>
+						<video data-autoplay src="images/Arduino_Controlled_Marbe_Maze.mp4"></video>
+					</section>
+
+					<section>
+						<h3>Motion controlled marble maze <span>(mine)</span></h3>
+						<video data-autoplay src="images/marble-maze-shit.mp4"></video>
+					</section>
+
+					<section>
+						<h3>Hand-tracking sign language learning platform</h3>
+						<a href="http://charliegerard.github.io/leapsync/" target="_blank"><img src="images/leapsync.png"></a>
+					</section>
+
+					<section>
+						<h3>Face-tracking virtual world</h3>
+						<a href="https://charliegerard.github.io/Perspective/" target="_blank"><img src="images/perspective.png"></a>
+					</section>
+
+					<section>
+						<h3>Accelerometer controlled graphics</h3>
+						<img src="images/cube.gif">
+					</section>
+
+					<section>
+						<h3>Epoc.js</h3>
+						<a href="https://github.com/charliegerard/Epoc.js" target="_blank"><img src="images/emotiv.png"></a>
+					</section>
+
+					<section>
+						<h3>Lightsaber goal</h3>
+						<video data-autoplay src="images/Arduino_Lightsaber.mp4"></video>
+					</section>
+
+					<section>
+						<h3>Lightsaber <span>(worst fail)</span></h3>
+						<img src="images/lightsaber.JPG" style="width: 400px">
+						<img src="images/lightsaber-2.jpg" style="width: 400px">
+					</section>
+
+					<section>
+						<h3>Touch poster</h3>
+						<video data-autoplay src="images/touch-poster.mov"></video>
+					</section>
+				</section>
+
+				<section class="limits">
+					<h3>Limits</h3>
+					<ul>
+						<li class="fragment">Not as performant as you'd like it to be</li>
+						<li class="fragment">Hard to debug</li>
+						<li class="fragment">Takes a long time</li>
+						<li class="fragment">Good for prototyping but probably not for large scale product</li>
+					</ul>
+				</section>
+
+				<section class="learnings">
+					<h3>Learnings</h3>
+					<ul>
+						<li class="fragment">Things never go the way you want (no matter how much you plan it)</li>
+						<li class="fragment">Hardware is HARD</li>
+						<li class="fragment">Being in Australia sucks</li>
+						<li class="fragment">Tracking your progress does help a lot</li>
+						<li class="fragment">Awesome and I wish it was my full time job</li>
+					</ul>
+				</section>
+
+				<section class="resources">
+					<h3>Resources</h3>
+					<ul>
+						<li><a href="https://www.hackster.io/" target="_blank"><p>Hackster</p></a></li>
+						<li><a href="http://hackaday.io/" target="_blank"><p>Hackaday</p></a></li>
+						<li><a href="http://makezine.com/" target="_blank"><p>Makezine</p></a></li>
+						<li><a href="http://www.ladyada.net/learn/arduino/index.html" target="_blank"><p>Lady Ada's blog</p></a></li>
+						<li><a href="https://www.youtube.com/channel/UCpOlOeQjj7EsVnDh3zuCgsA" target="_blank"><p>Adafruit Youtube channel</p></a></li>
+						<li><a href="https://www.youtube.com/user/iliketomakestuffcom" target="_blank"><p>I like to make stuff - Youtube channel</p></a></li>
+					</ul>
+				</section>
+
+				<section class="events">
+					<h3>Events and shops</h3>
+					<ul>
+						<li><a href="http://nodebotsau.io/" target="_blank"><p>Nodebots</p></a></li>
+						<li><a href="https://makerfairesydney.com/" target="_blank"><p>Maker faire</p></a></li>
+						<li><a href="http://www.meetup.com/Internet-of-Things-Sydney/" target="_blank"><p>IoT meetup</p></a></li>
+						<li><a href="https://littlebirdelectronics.com.au/" target="_blank"><p>Little birds Electronics</p></a></li>
+						<li><a href="https://www.sparkfun.com/" target="_blank"><p>Sparkfun</p></a></li>
+						<li><a href="https://www.adafruit.com" target="_blank"><p>Adafruit</p></a></li>
+					</ul>
+				</section>
+
+				<section class="thanks">
+					<h2>Thank you.</h2>
+					<a href="http://twitter.com/charlie__gerard" target="_blank"><img src="images/Twitter_logo_blue.png" style="width: 50px" alt="Twitter"></a>
+					<a href="http://github.com/charliegerard" target="_blank"><img src="images/github.svg" style="width: 47px" alt="github"></a>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				showNotes: false,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
