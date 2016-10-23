@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Programming for hardware in JavaScript - A presentation by Charlie Gerard</title>
+
+		<meta name="description" content="A presentation on Internet of Things">
+		<meta name="author" content="Charlie Gerard">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal ga-talk">
+			<div class="slides">
+				<section class="intro-title">
+					<h1 class="small-title">Programming for hardware</h1>
+					<h3 class="big-subtitle">in JavaScript</h3>
+					<p>
+						<small>by <a href="http://charliegerard.github.io" target="blank">Charlie Gerard</a> / <a href="http://twitter.com/charlie__gerard" target="blank">@charlie__gerard</a></small>
+					</p>
+				</section>
+
+				<section id="tools">
+					<h3>Electronics / Devices</h3>
+					<div class="tool">
+						<a href="https://www.arduino.cc/" target="_blank"><img src="img/arduino.png" alt="" /></a>
+						<p>Arduino</p>
+					</div>
+					<div class="tool">
+						<a href="raspberrypi.org" target="_blank"><img src="img/raspberry_pi.png" alt="" /></a>
+						<p>Raspberry Pi</p>
+					</div>
+					<div class="tool">
+						<a href="https://www.particle.io/" target="_blank"><img src="img/photon.jpg" style="width: 70px;" alt="" /></a>
+						<p>Particle Photon</p>
+					</div>
+					<div class="tool">
+						<a href="https://www.leapmotion.com/" target="_blank"><img src="img/leap-motion.png" alt="" /></a>
+						<p>Leap Motion</p>
+					</div>
+					<div class="tool">
+						<a href="http://www.sphero.com/" target="_blank"><img src="img/spherojs.jpg" style="width: 80px;" alt="" /></a>
+						<p>Sphero</p>
+					</div>
+					<div class="tool">
+						<a href="http://beagleboard.org/bone" target="_blank"><img src="http://www.mouser.com/images/microsites/BeagleBone_Black_1.JPG" style="width: 90px;" alt="" /></a>
+						<p>Beaglebone</p>
+					</div>
+					<div class="tool">
+						<a href="http://neurosky.com/" target="_blank"><img src="img/neurosky-node.jpg" alt="" /></a>
+						<p>Neurosky</p>
+					</div>
+					<div class="tool">
+						<a href="http://tessel.io" target="_blank"><img src="https://s3.amazonaws.com/technicalmachine-assets/technical-io/press-page/product-images/top.png" alt="" /></a>
+						<p>Tessel</p>
+					</div>
+					<div class="tool">
+						<a href="http://www.parrot.com/usa/" target="_blank"><img src="img/drone.jpg" alt="" /></a>
+						<p>Drone</p>
+					</div>
+				</section>
+
+				<section id="frameworks">
+					<h3>Frameworks</h3>
+					<div class="framework">
+						<a href="http://johnny-five.io/" target="_blank"><img src="img/nodebots.png" alt="" /></a>
+						<p>Johnny-five</p>
+					</div>
+					<div class="framework">
+						<a href="https://cylonjs.com/" target="_blank"><img src="img/cylonjs.png" alt="" /></a>
+						<p>Cylon.js</p>
+					</div>
+					<div class="framework">
+						<a href="https://github.com/sarahgp/p5bots" target="_blank"><img src="img/p5-logo.svg" alt="" /></a>
+						<p>p5bots</p>
+					</div>
+					<div class="framework">
+						<a href="https://github.com/leapmotion/leapjs" target="_blank"><img src="img/leapjs.png" alt="" /></a>
+						<p>LeapJS</p>
+					</div>
+					<div class="framework">
+						<a href="https://github.com/orbotix/sphero.js" target="_blank"><img src="img/spherojs.jpg" alt="" /></a>
+						<p>Sphero.js</p>
+					</div>
+					<div class="framework">
+						<a href="https://github.com/thalmiclabs/myo.js" target="_blank"><img src="img/myojs.png" alt="" /></a>
+						<p>Myo.js</p>
+					</div>
+					<div class="framework">
+						<a href="https://www.npmjs.com/package/cylon-neurosky" target="_blank"><img src="img/neurosky-logo.png" alt="" /></a>
+						<p>Neurosky module</p>
+					</div>
+					<div class="framework">
+						<a href="https://github.com/charliegerard/Epoc.js" target="_blank"><img src="img/epocjs.jpg" alt="" /></a>
+						<p>Epoc.js</p>
+					</div>
+				</section>
+
+				<section class="project-ideas">
+					<section>
+						<h2>What does it work?</h2>
+					</section>
+
+					<section>
+						<h3>Johnny-five</h3>
+						<p>Open-source JavaScript framework base on the Firmata protocol.</p>
+						<p>
+							Firmata is a protocol for communicating with microcontrollers from software on a host computer.
+						</p>
+					</section>
+				</section>
+
+				<section class="getting-started">
+					<section>
+						<h3>Getting started / setup</h3>
+						<h4>Prerequisites (OSX)</h4>
+						<ul>
+							<li>Install Node</li>
+							<li>Install Xcode</li>
+							<li>Install node-gyp</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Getting started / setup</h3>
+						<h4>Prerequisites (Window)</h4>
+						<ul>
+							<li>Install Node.js >= 0.10.x 32 bit</li>
+							<li>Install Visual Studio community edition</li>
+							<li>Install Python</li>
+							<li>Open up cmd (Start > Run.. > cmd) and enter set PATH=%PATH%;C:\Python27</li>
+							<li>Install node-gyp</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>"Hello World" example</h3>
+						<img class="example-image" src="https://github.com/rwaldron/johnny-five/raw/master/assets/led-blink.gif" alt="" />
+						<p class="example-text" data-markdown>
+							```
+							var five = require("johnny-five");
+							var board = new five.Board();
+
+							board.on("ready", function() {
+							  // Create an Led on pin 13
+							  var led = new five.Led(13);
+							  // Blink every half second
+							  led.blink(500);
+							});
+							```
+						</p>
+					</section>
+				</section>
+
+				<section class="project-ideas">
+					<section id="fragments9">
+						<h2>Live demo!</h2>
+						<h3 class="fragment">But first...</h3>
+						<img class="fragment" src="img/robotgif.gif" style="width: 600px">
+					</section>
+
+					<section>
+						<div style="display: inline-block">
+							<img src="http://www2.pcmag.com/media/images/393268-leap-motion-controller.jpg?thumb=y" style="width: 250px;">
+							<p><a href="https://www.leapmotion.com/" target="blank">Leap Motion</a></p>
+						</div>
+						<div style="display: inline-block">
+							<img src="http://ecx.images-amazon.com/images/I/51h6bMLVNKL._SL1136_.jpg" style="width: 250px;">
+							<p><a href="http://www.gosphero.com/" target="blank">Sphero</a></p>
+						</div>
+						<div style="display: inline-block">
+							<img src="http://ecx.images-amazon.com/images/I/81RNYV29HCL._SL1500_.jpg" style="width: 250px;">
+							<p><a href="http://ardrone2.parrot.com/" target="blank">Parrot AR Drone</a></p>
+						</div>
+					</section>
+
+					<section>
+						<div style="display: inline-block">
+							<img src="http://blog.p1.com.my/wp-content/uploads/2014/10/MYO-armband.jpg" style="width: 250px;">
+							<p><a href="https://www.thalmic.com/en/myo/" target="blank">Myo</a></p>
+						</div>
+						<div style="display: inline-block">
+							<img src="http://ecx.images-amazon.com/images/I/51h6bMLVNKL._SL1136_.jpg" style="width: 250px;">
+							<p><a href="http://www.gosphero.com/" target="blank">Sphero</a></p>
+						</div>
+						<div style="display: inline-block">
+							<img src="http://ecx.images-amazon.com/images/I/81RNYV29HCL._SL1500_.jpg" style="width: 250px;">
+							<p><a href="http://ardrone2.parrot.com/" target="blank">Parrot AR Drone</a></p>
+						</div>
+					</section>
+
+					<section>
+						<div style="display: inline-block">
+							<img src="http://a.tgcdn.net/images/products/zoom/e9e5_neurosky_mindwave.jpg" style="width: 250px;">
+							<p><a href="http://neurosky.com/" target="blank">Neurosky</a></p>
+						</div>
+						<div style="display: inline-block">
+							<img src="http://ecx.images-amazon.com/images/I/51h6bMLVNKL._SL1136_.jpg" style="width: 250px;">
+							<p><a href="http://www.gosphero.com/" target="blank">Sphero</a></p>
+						</div>
+						<div style="display: inline-block">
+							<img src="http://ecx.images-amazon.com/images/I/81RNYV29HCL._SL1500_.jpg" style="width: 250px;">
+							<p><a href="http://ardrone2.parrot.com/" target="blank">Parrot AR Drone</a></p>
+						</div>
+					</section>
+
+					<section>
+						<div style="display: inline-block">
+							<img src="http://emotiv.com/wp-content/uploads/2016/02/emotiv_epoc_600.png" style="width: 250px;">
+							<p><a href="http://emotiv.com/" target="blank">Emotiv EPOC</a></p>
+						</div>
+						<div style="display: inline-block">
+							<img src="http://ecx.images-amazon.com/images/I/51h6bMLVNKL._SL1136_.jpg" style="width: 250px;">
+							<p><a href="http://www.gosphero.com/" target="blank">Sphero</a></p>
+						</div>
+						<div style="display: inline-block">
+							<img src="http://ecx.images-amazon.com/images/I/81RNYV29HCL._SL1500_.jpg" style="width: 250px;">
+							<p><a href="http://ardrone2.parrot.com/" target="blank">Parrot AR Drone</a></p>
+						</div>
+					</section>
+
+					<section>
+						<iframe width="700" height="450" src="https://www.youtube.com/embed/Ks8xG4rcNxE" frameborder="0" allowfullscreen></iframe>
+					</section>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						### Code sample for Myo + Sphero.
+						#### Server
+
+						```
+						var express = require('express'),
+							path = require('path');
+
+						//create web server
+						var app = express();
+
+						//require the custom module
+						var lab = require('./my_modules/myo_sphero');
+						lab();
+
+						app.listen(3001);
+						console.log("Server running on port 3001");
+						```
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						### Code sample for Myo + Sphero.
+						#### Commands
+
+						```
+						module.exports = function() {
+
+							var spheron = require('spheron');
+							var myo = require('myo');
+
+							myo = Myo.create(0);
+
+							var device = '/dev/tty.Sphero-RBR-AMP-SPP';
+
+							var controlSphero = function(sphero) {
+									myo.on('wave_out', function(){
+										console.log('RIGHT');
+										sphero.heading = 90;
+										sphero.roll(70, 90, 1);
+									})
+							}
+
+							var ball = spheron.sphero().resetTimeout(true);
+									ball.open(device);
+
+								ball.on('open', function() {
+									console.log('connected to Sphero');
+										ball.setRGB(spheron.toolbelt.COLORS.PURPLE).setBackLED(255);
+										controlSphero(ball);
+								});
+						}
+						```
+					</script>
+				</section>
+
+
+				<section class="limits">
+					<section>
+						<h2>Limits</h2>
+					</section>
+
+					<section>
+						<h3>Fail, again and again... </h3>
+						<img src="http://i.giphy.com/lZqrnTEu9DAdO.gif" alt="" />
+					</section>
+
+					<section>
+						<h3>Motion controlled marble maze <span>(not mine)</span></h3>
+						<video width="580" height="415" controls>
+							<source src="img/Arduino_Controlled_Marbe_Maze.mp4" type="video/mp4">
+						</video>
+					</section>
+
+					<section>
+						<h3>Motion controlled marble maze <span>(mine)</span></h3>
+						<video width="660" height="415" controls>
+							<source src="img/marble-maze-shit.mp4" type="video/mp4">
+						</video>
+					</section>
+				</section>
+
+				<section class="resources">
+					<section>
+						<h3>Resources and additional info</h3>
+					</section>
+
+					<section>
+						<h3>Websites</h3>
+						<ul style="text-align: left; width: 100%">
+							<li>
+								<a href="http://iotlist.co/" target="blank">IoTList</a>
+							</li>
+							<li>
+								<a href="http://makezine.com/" target="blank">Makezine</a>
+							</li>
+
+							<li>
+								<a href="https://www.hackster.io/" target="blank">Hackster.io</a>
+							</li>
+							<li>
+								<a href="https://hackaday.io/projects">Hackaday.io</a>
+							</li>
+						</ul>
+
+						<h3>Where to buy</h3>
+						<ul style="text-align: left; width: 100%">
+							<li>
+								<a href="http://iotlist.co/" target="blank">Arduino website</a>
+							</li>
+							<li>
+								<a href="http://makezine.com/" target="blank">Raspberry Pi website</a>
+							</li>
+							<li>
+								<a href="http://makezine.com/" target="blank">Adafruit</a>
+							</li>
+							<li>
+								<a href="http://makezine.com/" target="blank">Sparkfun</a>
+							</li>
+							<li>
+								<a href="http://makezine.com/" target="blank">LittleBirdsElectronics</a>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>More?</h3>
+						<a href="https://twitter.com/internetofshit"><p>The Internet Of Shit</p></a>
+						<a href="https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ"><p>"Simone's Robots" Youtube Channel</p></a>
+						<a href="https://www.youtube.com/channel/UC6x7GwJxuoABSosgVXDYtTw"><p>"I like to make stuff" Youtube Channel</p></a>
+					</section>
+				</section>
+
+				<section class="resources">
+					<section>
+						<p><strong>Repos</strong></p>
+						<ul style="text-align: left; width: 100%">
+							<li>
+								<a href="http://www.github.com/charliegerard/leap_sphero" target="blank">Leap Motion + Sphero</a>
+							</li>
+							<li>
+								<a href="http://www.github.com/charliegerard/leap_drone" target="blank">Leap Motion + Drone</a>
+							</li>
+							<li>
+								<a href="http://www.github.com/charliegerard/myo_sphero" target="blank">Myo + Sphero</a>
+							</li>
+							<li>
+								<a href="http://www.github.com/charliegerard/myo_drone" target="blank">Myo + Drone</a>
+							</li>
+							<li>
+								<a href="https://github.com/charliegerard/neurosky-drone">Neurosky + Drone</a>
+							</li>
+							<li>
+								<a href="https://github.com/charliegerard/Epoc.js">Epoc.js framework</a>
+							</li>
+						</ul>
+					</section>
+				</section>
+
+				<section class="thanks">
+					<h2>Thank you!</h2>
+					<p>
+						Twitter: <a href="http://www.twitter.com/charlie__gerard" target="blank">@charlie__gerard</a>
+					</p>
+					<p>
+						Github: <a href="http://www.github.com/charliegerard" target="blank">charliegerard</a>
+					</p>
+					<p>Blog: <a href="http://charliegerard.github.io/blog" target="blank">charliegerard.github.io/blog</a></p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
