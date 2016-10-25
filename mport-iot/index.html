@@ -177,7 +177,37 @@
 							```
 						</p>
 					</section>
+
+					<section>
+						<h3>'Hello World' example in Cylon.js</h3>
+						<img src="http://blog.leapmotion.com/wp-content/uploads/2015/05/cylon.png" style="width: 150px; margin: 0" alt="" />
+						<p class="example-text-full-screen" data-markdown>
+							```
+							var Cylon = require("cylon");
+
+							// Initialize the robot
+							Cylon.robot({
+							  // Change the port to the correct port for your Arduino.
+							  connections: {
+							    arduino: { adaptor: 'firmata', port: '/dev/ttyACM0' }
+							  },
+
+							  devices: {
+							    led: { driver: 'led', pin: 13 }
+							  },
+
+							  work: function(my) {
+							    every((1).second(), function() {
+							      my.led.toggle();
+							    });
+							  }
+							}).start();
+							```
+						</p>
+					</section>
 				</section>
+
+
 
 				<section class="project-ideas">
 					<section id="fragments9">
@@ -376,13 +406,6 @@
 								<a href="http://makezine.com/" target="blank">LittleBirdsElectronics</a>
 							</li>
 						</ul>
-					</section>
-
-					<section>
-						<h3>More?</h3>
-						<a href="https://twitter.com/internetofshit"><p>The Internet Of Shit</p></a>
-						<a href="https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ"><p>"Simone's Robots" Youtube Channel</p></a>
-						<a href="https://www.youtube.com/channel/UC6x7GwJxuoABSosgVXDYtTw"><p>"I like to make stuff" Youtube Channel</p></a>
 					</section>
 				</section>
 

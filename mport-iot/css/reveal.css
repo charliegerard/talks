@@ -1293,6 +1293,12 @@ body {
   vertical-align: bottom;
 }
 
+.reveal section.getting-started .example-text-full-screen{
+  /*display: inline-block;*/
+  width: 100%;
+  /*vertical-align: bottom;*/
+}
+
 .reveal section.project-ideas h2, .reveal section.project-ideas h3, .reveal section.thanks h2{
   color: rgb(26, 25, 169);
   border-bottom: none;
