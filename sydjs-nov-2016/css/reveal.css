@@ -1286,3 +1286,13 @@ body {
 .reveal section.resources li a,  .reveal section.resources a, .reveal section.thanks a{
   color: rgba(26, 25, 169, 0.7);
 }
+
+.reveal section#tools .tool{
+  display: inline-block;
+  width: 20%;
+}
+
+.reveal section#tools h3{
+  /*width: 150px;*/
+  padding-bottom: 0;
+}
