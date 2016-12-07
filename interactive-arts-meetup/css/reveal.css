@@ -1344,31 +1344,36 @@ html:-moz-full-screen-ancestor {
   font-size: 30px;
 }
 
-.reveal section#about-me{
+.reveal section.about-me{
   text-align: left;
 }
 
-.reveal section#about-me .content{
+.reveal section.about-me .content{
   display: inline-block;
   width: 49%;
   vertical-align: top;
   /*text-align: justify;*/
 }
 
-.reveal section#about-me .content h3{
+.reveal section.about-me .content h3{
   color: rgb(26, 25, 169);
   font-size: 40px;
 }
 
-.reveal section#about-me img{
+.reveal section.about-me img{
   display: inline-block;
-  width: 40%;
+  width: 43%;
   margin-right: 1em;
   border: 5px solid rgb(255, 28, 0);
 }
 
-.reveal section#about-me .content p{
+.reveal section.about-me .content p{
   font-size: 25px;
+}
+
+.reveal section.about-me .content .fragment{
+  /*font-size: 25px;*/
+  width:100%;
 }
 
 .reveal section.topic h3{
