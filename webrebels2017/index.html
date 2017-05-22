@@ -23,6 +23,8 @@
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -42,6 +44,10 @@
 		<div class="reveal campjs-talk">
 
 			<div class="slides">
+				<div class="twitter-handle">
+					<a href="http://twitter.com/charlie__gerard">@charlie__gerard</a>
+				</div>
+
 				<section class="intro">
 					<h1 class="small-title">Look mum, no hands!</h1>
 					<h3 class="big-subtitle">Mind control in JavaScript</h3>
@@ -63,10 +69,13 @@
 				<section class="topic">
 					<h3>What is this talk about?</h3>
 					<ul>
-						<li>Creating a Node.js addon for a C++ library</li>
-						<li>Interacting with a brain sensor in JavaScript</li>
-						<li>Challenging the demo gods</li>
-						<li>Resources</li>
+						<!-- <li>Creating a Node.js addon for a C++ library</li> -->
+						<li>Back story.</li>
+						<li>Tools used.</li>
+						<li>Testing with the EmoComposer.</li>
+						<!-- <li>Interacting with a brain sensor in JavaScript</li> -->
+						<li>Challenging the demo gods.</li>
+						<li>Resources.</li>
 					</ul>
 				</section>
 
@@ -78,32 +87,39 @@
 					<section>
 						<h2>Step 1</h2>
 						<img src="http://charliegerard.github.io/images/leap-sphero-video.gif" alt="">
-						<p>Leap Motion</p>
+						<p>Leap Motion + Sphero with Node.js</p>
 					</section>
 
 					<section>
 						<h2>Step 2</h2>
 						<img src="http://charliegerard.github.io/images/myo-sphero3.png" alt="">
-						<p>Myo armband</p>
+						<p>Myo armband + Sphero with Node.js</p>
 					</section>
 
 					<section>
 						<h2>Step 3</h2>
-						<img src="https://cdn.shopify.com/s/files/1/0031/6882/t/12/assets/MindWave-headset.jpg?2137080139183096221" alt="">
-						<p>Neurosky</p>
+						<img src="https://cdn.shopify.com/s/files/1/0031/6882/t/12/assets/MindWave-headset.jpg?2137080139183096221" alt="" style="width: 300px">
+						<p>Neurosky + Sphero with Node.js</p>
 					</section>
 
 					<section>
 						<!-- <h3>Emotiv EPOC headset / C++ SDK</h3> -->
 						<h2>Step 4</h2>
 						<a href="http://emotiv.com" target="_blank"><img src="images/EPOC_Emotiv.png" alt="" /></a>
-						<p>Emotiv EPOC</p>
+						<p>Emotiv EPOC?</p>
+						<ul>
+							<li>Not many resources. <i class="em em-disappointed"></i></li>
+							<li>C++ SDK. <i class="em em-fearful"></i></li>
+							<li>Knowledge of C++: barely any... <i class="em em-poop"></i></li>
+						</ul>
+					</section>
 
-						<p>C++ SDK</p>
-
-						<p>knowledge of C++: barely any.</p>
-
-						<p>Solution: Trying to create an interface using JS.</p>
+					<section class="fragments">
+						<h4>Solution?</h4>
+						<div class="fragment">
+							<p>Try to create a JS framework.</p>
+							<img src="https://railsgirlssummerofcode.org/img/blog/2016/l1ghtsab3r-partyparrot.gif" style="width: 400px" alt="">
+						</div>
 					</section>
 				</section>
 
@@ -111,10 +127,10 @@
 					<section>
 						<h3>Tech stack</h3>
 						<ul>
-							<li>Emotiv EPOC C++ SDK</li>
-							<li>Node-gyp: A CLI tool for compiling native addons for Node.js</li>
-							<li>Node-bindings: Helper module for loading native module's .node file</li>
-							<li>Nan: Native Abstractions in Node.js</li>
+							<li>Emotiv EPOC C++ SDK.</li>
+							<li>Node-gyp: A CLI tool for compiling native addons for Node.js.</li>
+							<li>Node-bindings: Helper module for loading native module's .node file.</li>
+							<li>Nan: Native Abstractions in Node.js.</li>
 						</ul>
 					</section>
 					<section>

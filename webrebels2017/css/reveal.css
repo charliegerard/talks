@@ -1468,3 +1468,10 @@ html:-moz-full-screen-ancestor {
 .reveal section.thanks h2{
   color: rgb(26, 25, 169);
 }
+
+.reveal .twitter-handle{
+	position: absolute;
+	bottom: 0;
+	left: -4rem;
+	font-size: 1rem;
+}
