@@ -127,31 +127,16 @@
 					<section>
 						<h3>Tech stack</h3>
 						<ul>
-							<li>Emotiv EPOC C++ SDK.</li>
-							<li>Node-gyp: A CLI tool for compiling native addons for Node.js.</li>
-							<li>Node-bindings: Helper module for loading native module's .node file.</li>
-							<li>Nan: Native Abstractions in Node.js.</li>
+							<li>Emotiv EPOC <strong>C++ SDK</strong>.</li>
+							<li><strong>Node-gyp</strong>: A CLI tool for compiling native addons for Node.js.</li>
+							<li><strong>Node-bindings</strong>: Helper module for loading native module's .node file.</li>
+							<li><strong>Nan</strong>: Native Abstractions in Node.js.</li>
 						</ul>
-					</section>
-					<section>
-						<h3>How does it work?</h3>
-						<!-- <p>binding.gyp file</p> -->
-						<pre><code data-trim data-noescape>
-#binding.gyp file
-{
-  "targets": [
-    {
-      "target_name": "binding",
-      "sources": [ "src/binding.cc" ]
-    }
-  ]
-}
-						</code></pre>
 					</section>
 
 					<section>
 						<h3>Hello World example</h3>
-						<pre style="width: 30%; display: inline-block;"><code data-trim data-noescape>
+						<pre><code data-trim data-noescape>
 # binding.cc file
 # ----------------
 void Method(const v8::FunctionCallbackInfo<v8::Value>& args) {
@@ -166,8 +151,11 @@ void init(v8::Local<v8::Object> exports) {
 
 NODE_MODULE(binding, init);
 						</code></pre>
+					</section>
+					<section>
+						<h3>Hello World example</h3>
 
-						<pre style="width: 30%; display: inline-block;"><code data-trim data-noescape>
+						<pre><code data-trim data-noescape>
 # binding.gyp file.
 # ----------------
 {
@@ -181,7 +169,11 @@ NODE_MODULE(binding, init);
 }
 						</code></pre>
 
-						<pre style="width: 30%; display: inline-block;"><code data-trim data-noescape>
+					</section>
+					<section>
+						<h3>Hello World example</h3>
+
+						<pre><code data-trim data-noescape>
 # test.js file.
 # ----------------
 'use strict';
@@ -201,8 +193,9 @@ console.log('binding.hello() =', binding.hello());
 					</section>
 
 					<section>
-						<h3>EmoComposer</h3>
-						<!-- <img src="images/demos.gif" style="width: 700px"> -->
+						<h3>Emulation with EmoComposer</h3>
+						<video src="images/emocomposer.mov" controls style="width: 700px">
+						</video>
 					</section>
 
 					<section>
@@ -212,21 +205,21 @@ console.log('binding.hello() =', binding.hello());
 					</section>
 
 					<section>
-						<h3>Brain keyboard</h3>
-						<!-- <img src="images/demos.gif" style="width: 700px"> -->
-						<iframe src="https://giphy.com/embed/l46Cbqvg6gxGvh2PS" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-					</section>
-
-					<section>
-						<h3>Emotiv EPOC Framework</h3>
 						<a href="https://github.com/charliegerard/Epoc.js" target="_blank"><video controls src="images/emotiv-demo.mov"></video></a>
 					</section>
 
 					<section>
-						<h3>Emotiv EPOC Framework</h3>
 						<a href="https://github.com/charliegerard/Epoc.js" target="_blank"><video controls src="images/emotiv-interface.mov"></video></a>
 					</section>
 
+				</section>
+
+				<section>
+					<h3>Next?</h3>
+					<ul>
+						<li>Drone army</li>
+						<li>Brain keyboard</li>
+					</ul>
 				</section>
 
 				<section class="resources">
