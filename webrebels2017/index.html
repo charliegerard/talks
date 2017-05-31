@@ -125,7 +125,7 @@
 					<section class="fragments">
 						<h2>Solution</h2>
 						<div class="fragment">
-							<p>Create a JS framework.</p>
+							<p>Create a JavaScript framework.</p>
 							<img src="https://railsgirlssummerofcode.org/img/blog/2016/l1ghtsab3r-partyparrot.gif" style="width: 400px" alt="">
 						</div>
 					</section>
@@ -145,19 +145,17 @@
 					<section>
 						<h3>Hello World example</h3>
 						<pre><code data-trim data-noescape>
-# binding.cc file
+# hello.cc file
 # ----------------
 void Method(const v8::FunctionCallbackInfo<v8::Value>& args) {
-  v8::Isolate* isolate = args.GetIsolate();
-  v8::HandleScope scope(isolate);
-  args.GetReturnValue().Set(v8::String::NewFromUtf8(isolate, "world"));
+  std::cout << "hello world" << std::endl;
 }
 
-void init(v8::Local<v8::Object> exports) {
+void Init(v8::Local<v8::Object> exports) {
   NODE_SET_METHOD(exports, "hello", Method);
 }
 
-NODE_MODULE(binding, init);
+NODE_MODULE(module, Init);
 						</code></pre>
 					</section>
 					<section>
@@ -167,16 +165,15 @@ NODE_MODULE(binding, init);
 # binding.gyp file.
 # ----------------
 {
-  'targets': [
+  "targets": [
     {
-      'target_name': 'binding',
-      'defines': [ 'V8_DEPRECATION_WARNINGS=1' ],
-      'sources': [ 'binding.cc' ]
+      "target_name": "module",
+      "sources": [ "hello.cc" ]
     }
   ]
 }
 						</code></pre>
-
+						<pre><code>node-gyp rebuild</code></pre>
 					</section>
 					<section>
 						<h3>Hello World example</h3>
@@ -184,13 +181,11 @@ NODE_MODULE(binding, init);
 						<pre><code data-trim data-noescape>
 # test.js file.
 # ----------------
-'use strict';
-const common = require('../../common');
-const assert = require('assert');
-const binding = require(`./build/${common.buildType}/binding`);
-assert.strictEqual(binding.hello(), 'world');
-console.log('binding.hello() =', binding.hello());
+var addon = require('bindings')('module');
+console.log(addon.hello());
 						</code></pre>
+
+						<pre><code>node test.js // 'hello world'</code></pre>
 					</section>
 				</section>
 
@@ -207,26 +202,88 @@ console.log('binding.hello() =', binding.hello());
 					</section>
 
 					<section>
-						<h3>Drone</h3>
-						<!-- <img src="images/demos.gif" style="width: 700px"> -->
-						<iframe src="https://giphy.com/embed/l46Cbqvg6gxGvh2PS" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+						<h3>Mental commands</h3>
+						<a href="https://github.com/charliegerard/Epoc.js" target="_blank"><video controls src="images/emotiv-interface.mov"></video></a>
 					</section>
 
 					<section>
+						<h3>Facial expressions</h3>
 						<a href="https://github.com/charliegerard/Epoc.js" target="_blank"><video controls src="images/emotiv-demo.mov"></video></a>
 					</section>
 
 					<section>
-						<a href="https://github.com/charliegerard/Epoc.js" target="_blank"><video controls src="images/emotiv-interface.mov"></video></a>
+						<h3>Drone</h3>
+						<!-- <img src="images/demos.gif" style="width: 700px"> -->
+						<iframe src="https://giphy.com/embed/l46Cbqvg6gxGvh2PS" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 					</section>
-
 				</section>
 
-				<section>
+				<section class="demos">
+					<section>
+						<h3>Code samples</h3>
+						<pre><code data-trim data-noescape>
+# functions.cc
+# ------------
+NAN_METHOD(Connect) {
+ EmoStateHandle eState = EE_EmoStateCreate();
+
+ v8::Local<v8::Object> event = Nan::New<v8::Object>();
+
+ user.isBlinking = ES_ExpressivIsBlink(eState);
+ Nan::Set(event, Nan::New("blink").ToLocalChecked(), Nan::New(user.isBlinking));
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<pre><code data-trim data-noescape>
+# epoc.cc
+# I don't think I need this file...
+# ------------
+using v8::FunctionTemplate;
+
+NAN_MODULE_INIT(InitAll) {
+  Nan::Set(target, Nan::New("connect").ToLocalChecked(),
+    Nan::GetFunction(Nan::New<FunctionTemplate>(Connect)).ToLocalChecked());
+}
+
+NODE_MODULE(NativeExtension, InitAll)
+						</code></pre>
+					</section>
+
+					<section>
+						<pre><code data-trim data-noescape>
+# binding.gyp
+# ------------
+{
+ "targets": [
+  {
+   "target_name": "index",
+   "sources": [ "epoc.cc", "functions.cc"]
+  }
+ ]
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<pre><code data-trim data-noescape>
+# main.js
+# ------------
+var Epoc = require('bindings')('index');
+Epoc.connect(function(event){
+ console.log(event);
+})
+					</code></pre>
+				</section>
+			</section>
+		</section>
+
+				<section class="demos">
 					<h3>Next?</h3>
 					<ul>
-						<li>Drone army</li>
-						<li>Brain keyboard</li>
+						<li>Drone army?</li>
+						<li>Brain keyboard?	</li>
 					</ul>
 				</section>
 
@@ -237,6 +294,8 @@ console.log('binding.hello() =', binding.hello());
 						<li><a href="https://github.com/nodejs/node-gyp" target="_blank"><p>Node-gyp</p></a></li>
 						<li><a href="https://github.com/nodejs/nan" target="_blank"><p>Nan</p></a></li>
 						<li><a href="https://github.com/TooTallNate/node-bindings" target="_blank"><p>Node-bindings</p></a></li>
+						<li><a href="https://github.com/Emotiv/community-sdk" target="_blank"><p>Emotiv Community SDK</p></a></li>
+						<li><a href="https://github.com/nodejs/node-addon-examples" target="_blank"><p>Node addon examples</p></a></li>
 					</ul>
 				</section>
 
