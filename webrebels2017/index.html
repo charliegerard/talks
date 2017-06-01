@@ -7,7 +7,7 @@
 
 		<title>Look mum, no hands! Mind control in JavaScript</title>
 
-		<meta name="description" content="A talk on creative technologies">
+		<meta name="description" content="A talk on creating a framework for the Epoc brain sensor in JavaScript">
 		<meta name="author" content="Charlie Gerard">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -62,7 +62,7 @@
 						<h3>About me</h3>
 						<p class="fragment">Currently: <em>Creative Developer @NYT</em></p>
 						<p class="fragment">Previously: <em>Software Developer @ThoughtWorks</em></p>
-						<p class="fragment">Mainly: <em>I like to make stuff</em></p>
+						<p class="fragment">Mainly: <em>I like to make (useless) stuff</em></p>
 					</div>
 				</section>
 
@@ -74,8 +74,8 @@
 						<li>Tools used.</li>
 						<!-- <li>Testing with the EmoComposer.</li> -->
 						<!-- <li>Interacting with a brain sensor in JavaScript</li> -->
-						<li>Challenging the demo gods.</li>
-						<li>Learnings.</li>
+						<li>Code samples.</li>
+						<li>Live demo</li>
 						<li>Resources.</li>
 					</ul>
 				</section>
@@ -191,35 +191,6 @@ console.log(addon.hello());
 
 				<section class="demos">
 					<section>
-						<h3>Demos</h3>
-						<img src="images/demos.gif" style="width: 700px">
-					</section>
-
-					<section>
-						<h3>Emulation with EmoComposer</h3>
-						<video src="images/emocomposer.mov" controls style="width: 700px">
-						</video>
-					</section>
-
-					<section>
-						<h3>Mental commands</h3>
-						<a href="https://github.com/charliegerard/Epoc.js" target="_blank"><video controls src="images/emotiv-interface.mov"></video></a>
-					</section>
-
-					<section>
-						<h3>Facial expressions</h3>
-						<a href="https://github.com/charliegerard/Epoc.js" target="_blank"><video controls src="images/emotiv-demo.mov"></video></a>
-					</section>
-
-					<section>
-						<h3>Drone</h3>
-						<!-- <img src="images/demos.gif" style="width: 700px"> -->
-						<iframe src="https://giphy.com/embed/l46Cbqvg6gxGvh2PS" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-					</section>
-				</section>
-
-				<section class="demos">
-					<section>
 						<h3>Code samples</h3>
 						<pre><code data-trim data-noescape>
 # functions.cc
@@ -234,7 +205,7 @@ NAN_METHOD(Connect) {
 }
 						</code></pre>
 					</section>
-
+<!--
 					<section>
 						<pre><code data-trim data-noescape>
 # epoc.cc
@@ -249,7 +220,7 @@ NAN_MODULE_INIT(InitAll) {
 
 NODE_MODULE(NativeExtension, InitAll)
 						</code></pre>
-					</section>
+					</section> -->
 
 					<section>
 						<pre><code data-trim data-noescape>
@@ -280,12 +251,42 @@ Epoc.connect(function(event){
 		</section>
 
 				<section class="demos">
-					<h3>Next?</h3>
-					<ul>
-						<li>Drone army?</li>
-						<li>Brain keyboard?	</li>
-					</ul>
+					<section>
+						<h3>Demos</h3>
+						<img src="images/demos.gif" style="width: 700px">
+					</section>
+
+					<section>
+						<h3>Emulation with EmoComposer</h3>
+						<video src="images/emocomposer.mov" controls style="width: 700px">
+						</video>
+					</section>
+
+					<section>
+						<h3>Mental commands</h3>
+						<a href="https://github.com/charliegerard/Epoc.js" target="_blank"><video controls loop src="images/emotiv-interface.mov"></video></a>
+					</section>
+
+					<section>
+						<h3>Facial expressions</h3>
+						<a href="https://github.com/charliegerard/Epoc.js" target="_blank"><video controls src="images/emotiv-demo.mov"></video></a>
+					</section>
+
+					<section>
+						<h3>Epoc & Drone</h3>
+						<!-- <img src="images/demos.gif" style="width: 700px"> -->
+						<iframe src="https://giphy.com/embed/l46Cbqvg6gxGvh2PS" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+					</section>
 				</section>
+
+
+				<section class="demos">
+					<!-- <h3>Learnings</h3>
+					<ul>
+						<li>I need to learn C++.</li>
+						<li>Hardware is (still) hard.</li>
+					</ul>
+				</section> -->
 
 				<section class="resources">
 					<h3>Resources</h3>
