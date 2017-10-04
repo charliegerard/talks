@@ -48,7 +48,7 @@
 					<a href="http://twitter.com/devdevcharlie">@devdevcharlie</a> - <a target="_blank" href="http://charliegerard.github.io/talks/nodeconfeu17">http://charliegerard.github.io/talks/nodeconfeu17</a>
 				</div>
 
-				<section class="intro">
+				<section data-transition="none" class="intro">
 					<h1 class="small-title">Look mum, no hands!</h1>
 					<h3 class="big-subtitle">Mind control in JavaScript</h3>
 					<p>
@@ -56,7 +56,7 @@
 					</p>
 				</section>
 
-				<section class="about-me" id="fragments">
+				<section data-transition="none" class="about-me" id="fragments">
 					<img src="https://media.giphy.com/media/w3J7mstYCISqs/giphy.gif">
 					<div class="content">
 						<h3>About me</h3>
@@ -70,7 +70,7 @@
 					</div>
 				</section>
 
-				<section class="topic">
+				<section data-transition="none" class="topic">
 					<h3>What is this talk about?</h3>
 					<ul>
 						<li>How I got here.</li>
@@ -82,49 +82,50 @@
 					</ul>
 				</section>
 
-				<section id="tools">
-					<section>
+				<section data-transition="none" id="tools">
+					<section data-transition="none">
 						<h3>How it all started...</h3>
 					</section>
 
-					<section>
-						<h2>Step 1</h2>
+					<section data-transition="none">
+						<!-- <h2>Step 1</h2> -->
 						<img src="http://charliegerard.github.io/images/leap-sphero-video.gif" alt="" style="width: 700px">
-						<p>Leap Motion + Sphero with Node.js</p>
+						<p>Leap Motion & Sphero with Node.js</p>
 					</section>
 
-					<section>
-						<h2>Step 2</h2>
+					<section data-transition="none">
+						<!-- <h2>Step 2</h2> -->
 						<img src="http://charliegerard.github.io/images/myo-sphero3.png" alt="" style="width: 700px">
-						<p>Myo armband + Sphero with Node.js</p>
+						<p>Myo armband & Sphero with Node.js</p>
 					</section>
 
-					<section>
-						<h2>Step 3</h2>
+					<section data-transition="none">
+						<!-- <h2>Step 3</h2> -->
 						<img src="https://cdn.shopify.com/s/files/1/0031/6882/t/12/assets/MindWave-headset.jpg?2137080139183096221" alt="" style="width: 300px">
-						<p>Neurosky + Sphero with Node.js</p>
+						<p>Neurosky & Sphero with Node.js</p>
 					</section>
 
-					<section>
+					<section data-transition="none">
 						<!-- <h3>Emotiv EPOC headset / C++ SDK</h3> -->
-						<h2>Step 4</h2>
+						<!-- <h2>Step 4</h2> -->
 						<!-- <a href="http://emotiv.com" target="_blank"><img src="images/EPOC_Emotiv.png" alt="" /></a> -->
 						<a href="http://emotiv.com" target="_blank"><img src="images/me-emotiv.png" alt="" style="width: 700px"/></a>
 						<p>Emotiv EPOC</p>
 					</section>
 
-					<section class="fragments2">
+					<section data-transition="none" class="fragments2">
 						<!-- <h3>Emotiv EPOC headset / C++ SDK</h3> -->
 						<h2>But...</h2>
 						<a href="http://emotiv.com" target="_blank"><img src="images/EPOC_Emotiv.png" alt="" /></a>
 						<ul>
-							<li class="fragment">Not many resources available. <i class="em em-disappointed"></i></li>
-							<li class="fragment">SDK only available in C++, C#, Java, Python, Obj-C. <i class="em em-fearful"></i></li>
-							<li class="fragment">Knowledge of C++: barely any... <i class="em em-poop"></i></li>
+							<li class="fragment">Lack of resources available.</li>
+							<li class="fragment">At the time, SDK only available in C++ & Java.</li>
+							<li class="fragment">Not much free time.</li>
+							<li class="fragment">Not much patience.</li>
 						</ul>
 					</section>
 
-					<section class="fragments">
+					<section data-transition="none" class="fragments">
 						<h2>Solution</h2>
 						<div class="fragment">
 							<p>Create a JavaScript framework.</p>
@@ -133,7 +134,7 @@
 					</section>
 				</section>
 
-				<section>
+				<section data-transition="none">
 					<h3>What does this framework do?</h3>
 					<ul>
 						<li>Interaction with the EmoComposer</li>
@@ -145,8 +146,8 @@
 					</ul>
 				</section>
 
-				<section id="frameworks">
-					<section>
+				<section data-transition="none" id="frameworks">
+					<section data-transition="none">
 						<h3>Tech stack</h3>
 						<ul>
 							<li>Emotiv EPOC <strong>C++ SDK</strong>.</li>
@@ -156,7 +157,7 @@
 						</ul>
 					</section>
 
-					<section>
+					<section data-transition="none">
 						<h3>Hello World example</h3>
 						<pre><code data-trim data-noescape>
 # hello.cc file
@@ -172,7 +173,7 @@ void Init(v8::Local<v8::Object> exports) {
 NODE_MODULE(module, Init);
 						</code></pre>
 					</section>
-					<section>
+					<section data-transition="none">
 						<h3>Hello World example</h3>
 
 						<pre><code data-trim data-noescape>
@@ -189,7 +190,7 @@ NODE_MODULE(module, Init);
 						</code></pre>
 						<pre><code>node-gyp rebuild</code></pre>
 					</section>
-					<section>
+					<section data-transition="none">
 						<h3>Hello World example</h3>
 
 						<pre><code data-trim data-noescape>
@@ -203,8 +204,8 @@ console.log(addon.hello());
 					</section>
 				</section>
 
-				<section class="demos">
-					<section>
+				<section data-transition="none" class="demos">
+					<section data-transition="none">
 						<h3>Code samples</h3>
 						<pre><code data-trim data-noescape>
 # functions.cc
@@ -236,7 +237,7 @@ NODE_MODULE(NativeExtension, InitAll)
 						</code></pre>
 					</section> -->
 
-					<section>
+					<section data-transition="none">
 						<pre><code data-trim data-noescape>
 # binding.gyp
 # ------------
@@ -251,7 +252,7 @@ NODE_MODULE(NativeExtension, InitAll)
 						</code></pre>
 					</section>
 
-					<section>
+					<section data-transition="none">
 						<pre><code data-trim data-noescape>
 # main.js
 # ------------
@@ -264,45 +265,44 @@ Epoc.connect(function(event){
 			</section>
 		</section>
 
-				<section class="demos">
-					<section>
+				<section data-transition="none" class="demos">
+					<section data-transition="none">
 						<h3>Demos</h3>
 						<img src="images/demos.gif" style="width: 700px">
 					</section>
 
-					<section>
+					<section data-transition="none">
 						<h3>Emulation with EmoComposer</h3>
 						<video src="images/emocomposer.mov" controls style="width: 700px">
 						</video>
 					</section>
 
-					<section>
+					<section data-transition="none">
 						<h3>Mental commands</h3>
 						<a href="https://github.com/charliegerard/Epoc.js" target="_blank"><video controls loop src="images/emotiv-interface.mov"></video></a>
 					</section>
 
-					<section>
+					<section data-transition="none">
 						<h3>Facial expressions</h3>
 						<a href="https://github.com/charliegerard/Epoc.js" target="_blank"><video controls src="images/emotiv-demo.mov"></video></a>
 					</section>
 
-					<section>
+					<section data-transition="none">
 						<h3>Epoc & Drone</h3>
 						<!-- <img src="images/demos.gif" style="width: 700px"> -->
 						<iframe src="https://giphy.com/embed/l46Cbqvg6gxGvh2PS" width="480" height="330" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 					</section>
 				</section>
 
-
-				<section class="demos">
-					<!-- <h3>Learnings</h3>
+				<section data-transition="none" class="demos">
+					<h3>Learnings</h3>
 					<ul>
-						<li>I need to learn C++.</li>
+						<li>I can do this!</li>
 						<li>Hardware is (still) hard.</li>
 					</ul>
-				</section> -->
+				</section>
 
-				<section class="resources">
+				<section data-transition="none" class="resources">
 					<h3>Resources</h3>
 					<ul>
 						<li><a href="https://github.com/charliegerard/Epoc.js" target="_blank"><p>Epoc.js</p></a></li>
@@ -314,10 +314,10 @@ Epoc.connect(function(event){
 					</ul>
 				</section>
 
-				<section class="thanks">
+				<section data-transition="none" class="thanks">
 					<h2>Thank you!</h2>
 					<!-- <iframe src="https://giphy.com/embed/3oEjHWXddcCOGZNmFO" width="480" height="386" style="display:block; margin: 0 auto;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
-					<a href="http://twitter.com/charlie__gerard" target="_blank"><img src="images/Twitter_logo_blue.png" style="width: 50px" alt="Twitter"></a>
+					<a href="http://twitter.com/devdevcharlie" target="_blank"><img src="images/Twitter_logo_blue.png" style="width: 50px" alt="Twitter"></a>
 					<a href="http://github.com/charliegerard" target="_blank"><img src="images/github.svg" style="width: 47px" alt="github"></a>
 				</section>
 			</div>
