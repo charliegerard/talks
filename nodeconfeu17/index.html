@@ -158,21 +158,58 @@
 					</section>
 
 					<section data-transition="none">
-						<h3>Hello World example</h3>
-						<pre><code data-trim data-noescape>
+							<h3>Hello World example</h3>
+							<pre><code data-trim data-noescape>
 # hello.cc file
 # ----------------
-void Method(const v8::FunctionCallbackInfo<v8::Value>& args) {
-  std::cout << "hello world" << std::endl;
+<div style="background-color: rgba(255,255,255,0.1); margin: 0; padding: 0">void Method(const v8::FunctionCallbackInfo<v8::Value>& args) {
+ std::cout << "hello world" << std::endl;
 }
-
+</div>
 void Init(v8::Local<v8::Object> exports) {
-  NODE_SET_METHOD(exports, "hello", Method);
+ NODE_SET_METHOD(exports, "hello", Method);
 }
 
 NODE_MODULE(module, Init);
-						</code></pre>
+							</code></pre>
 					</section>
+
+					<section data-transition="none">
+							<h3>Hello World example</h3>
+							<pre><code data-trim data-noescape>
+# hello.cc file
+# ----------------
+void Method(const v8::FunctionCallbackInfo<v8::Value>& args) {
+ std::cout << "hello world" << std::endl;
+}
+<div style="background-color: rgba(255,255,255,0.1)">
+void Init(v8::Local<v8::Object> exports) {
+ NODE_SET_METHOD(exports, "hello", Method);
+}
+</div>
+NODE_MODULE(module, Init);
+							</code></pre>
+					</section>
+
+					<section data-transition="none">
+							<h3>Hello World example</h3>
+							<pre><code data-trim data-noescape>
+# hello.cc file
+# ----------------
+void Method(const v8::FunctionCallbackInfo<v8::Value>& args) {
+ std::cout << "hello world" << std::endl;
+}
+
+void Init(v8::Local<v8::Object> exports) {
+ NODE_SET_METHOD(exports, "hello", Method);
+}
+<div style="background-color: rgba(255,255,255,0.1)">
+NODE_MODULE(module, Init);
+</div>
+</code></pre>
+					</section>
+
+
 					<section data-transition="none">
 						<h3>Hello World example</h3>
 
