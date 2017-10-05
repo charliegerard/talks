@@ -162,15 +162,15 @@
 							<pre><code data-trim data-noescape>
 # hello.cc file
 # ----------------
-<div style="background-color: rgba(255,255,255,0.1); margin: 0; padding: 0">void Method(const v8::FunctionCallbackInfo<v8::Value>& args) {
+<div style="background-color: rgba(255,255,255,0.1); margin: 0; padding: 0">void Main(const v8::FunctionCallbackInfo<v8::Value>& args) {
  std::cout << "hello world" << std::endl;
 }
 </div>
 void Init(v8::Local<v8::Object> exports) {
- NODE_SET_METHOD(exports, "hello", Method);
+ NODE_SET_METHOD(exports, "sayHello", Main);
 }
 
-NODE_MODULE(module, Init);
+NODE_MODULE(myModule, Init);
 							</code></pre>
 					</section>
 
@@ -179,15 +179,15 @@ NODE_MODULE(module, Init);
 							<pre><code data-trim data-noescape>
 # hello.cc file
 # ----------------
-void Method(const v8::FunctionCallbackInfo<v8::Value>& args) {
+void Main(const v8::FunctionCallbackInfo<v8::Value>& args) {
  std::cout << "hello world" << std::endl;
 }
 <div style="background-color: rgba(255,255,255,0.1)">
 void Init(v8::Local<v8::Object> exports) {
- NODE_SET_METHOD(exports, "hello", Method);
+ NODE_SET_METHOD(exports, "sayHello", Main);
 }
 </div>
-NODE_MODULE(module, Init);
+NODE_MODULE(myModule, Init);
 							</code></pre>
 					</section>
 
@@ -196,15 +196,15 @@ NODE_MODULE(module, Init);
 							<pre><code data-trim data-noescape>
 # hello.cc file
 # ----------------
-void Method(const v8::FunctionCallbackInfo<v8::Value>& args) {
+void Main(const v8::FunctionCallbackInfo<v8::Value>& args) {
  std::cout << "hello world" << std::endl;
 }
 
 void Init(v8::Local<v8::Object> exports) {
- NODE_SET_METHOD(exports, "hello", Method);
+ NODE_SET_METHOD(exports, "sayHello", Main);
 }
 <div style="background-color: rgba(255,255,255,0.1)">
-NODE_MODULE(module, Init);
+NODE_MODULE(myModule, Init);
 </div>
 </code></pre>
 					</section>
@@ -212,14 +212,13 @@ NODE_MODULE(module, Init);
 
 					<section data-transition="none">
 						<h3>Hello World example</h3>
-
 						<pre><code data-trim data-noescape>
 # binding.gyp file.
 # ----------------
 {
   "targets": [
     {
-      "target_name": "module",
+      "target_name": "myModule",
       "sources": [ "hello.cc" ]
     }
   ]
@@ -227,14 +226,15 @@ NODE_MODULE(module, Init);
 						</code></pre>
 						<pre><code>node-gyp rebuild</code></pre>
 					</section>
+
 					<section data-transition="none">
 						<h3>Hello World example</h3>
 
 						<pre><code data-trim data-noescape>
 # test.js file.
 # ----------------
-var addon = require('bindings')('module');
-console.log(addon.hello());
+var addon = require('bindings')('myModule');
+console.log(addon.sayHello());
 						</code></pre>
 
 						<pre><code>node test.js // 'hello world'</code></pre>
