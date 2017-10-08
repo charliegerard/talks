@@ -88,26 +88,22 @@
 					</section>
 
 					<section data-transition="none">
-						<!-- <h2>Step 1</h2> -->
 						<img src="http://charliegerard.github.io/images/leap-sphero-video.gif" alt="" style="width: 700px">
 						<p>Leap Motion & Sphero with Node.js</p>
 					</section>
 
 					<section data-transition="none">
-						<!-- <h2>Step 2</h2> -->
 						<img src="http://charliegerard.github.io/images/myo-sphero3.png" alt="" style="width: 700px">
 						<p>Myo armband & Sphero with Node.js</p>
 					</section>
 
 					<section data-transition="none">
-						<!-- <h2>Step 3</h2> -->
 						<img src="https://cdn.shopify.com/s/files/1/0031/6882/t/12/assets/MindWave-headset.jpg?2137080139183096221" alt="" style="width: 300px">
 						<p>Neurosky & Sphero with Node.js</p>
 					</section>
 
 					<section data-transition="none">
 						<!-- <h3>Emotiv EPOC headset / C++ SDK</h3> -->
-						<!-- <h2>Step 4</h2> -->
 						<!-- <a href="http://emotiv.com" target="_blank"><img src="images/EPOC_Emotiv.png" alt="" /></a> -->
 						<a href="http://emotiv.com" target="_blank"><img src="images/me-emotiv.png" alt="" style="width: 700px"/></a>
 						<p>Emotiv EPOC</p>
@@ -257,22 +253,6 @@ NAN_METHOD(Connect) {
 }
 						</code></pre>
 					</section>
-<!--
-					<section>
-						<pre><code data-trim data-noescape>
-# epoc.cc
-# I don't think I need this file...
-# ------------
-using v8::FunctionTemplate;
-
-NAN_MODULE_INIT(InitAll) {
-  Nan::Set(target, Nan::New("connect").ToLocalChecked(),
-    Nan::GetFunction(Nan::New<FunctionTemplate>(Connect)).ToLocalChecked());
-}
-
-NODE_MODULE(NativeExtension, InitAll)
-						</code></pre>
-					</section> -->
 
 					<section data-transition="none">
 						<pre><code data-trim data-noescape>
