@@ -314,6 +314,14 @@ html:-moz-full-screen-ancestor {
   -webkit-perspective-origin: 50% 40%;
           perspective-origin: 50% 40%; }
 
+.reveal .slides{
+  margin: 0;
+  width: 100% !important;
+  height: 100% !important;
+  /*background: pink;*/
+  zoom: 0 !important;
+}
+
 .reveal .slides > section {
   -ms-perspective: 600px; }
 
@@ -1341,8 +1349,9 @@ html:-moz-full-screen-ancestor {
   /* custom css */
 
 .reveal section.intro p{
-  font-size: 30px;
+  font-size: 25px;
 }
+
 
 .reveal section.about-me{
   text-align: left;
@@ -1378,6 +1387,59 @@ html:-moz-full-screen-ancestor {
 .reveal section.about-me .content .fragment{
   /*font-size: 25px;*/
   width:100%;
+}
+
+
+.reveal .slides section.topic{
+  /*top: 25% !important;*/
+  display: block;
+  height: 100%;
+  margin: 0 !important;
+  padding-top: 0;
+}
+
+.reveal section.topic .left-block{
+  width: 45%;
+  height: 100%;
+  background: rgba(100,100,100,0.1);
+  padding-top: 15%;
+  position: absolute;
+  transform: skew(20deg) translateX(-20%);
+}
+
+.reveal section.topic .left-block h3{
+  transform: skew(-20deg)  translateX(20%);
+}
+
+.reveal section.topic .right-block{
+  padding-top: 15%;
+  /*margin-left: 2rem;*/
+}
+
+.reveal section.topic ul{
+    width: fit-content;
+    -webkit-transform: skew(20deg) translateX(-5%);
+       -moz-transform: skew(20deg);
+         -o-transform: skew(20deg);
+    width: 30%;
+    /*border-left: 2px solid black;*/
+    /*padding-left: 2rem;*/
+}
+
+.reveal section.topic ul li{
+  -webkit-transform: skew(-20deg);
+  list-style: none;
+  font-size: 1.7rem;
+}
+
+.reveal section.topic ul li span{
+  vertical-align: middle;
+}
+
+.reveal section.topic ul li img.list-icon{
+  width: 3rem;
+  margin-right: 5%;
+  vertical-align: middle;
 }
 
 .reveal section.topic h3{
@@ -1475,7 +1537,7 @@ html:-moz-full-screen-ancestor {
 
 .reveal .twitter-handle{
 	position: fixed;
-	bottom: 0;
-	left: -1rem;
+	bottom: 3rem;
+	left: 2rem;
 	font-size: 1rem;
 }

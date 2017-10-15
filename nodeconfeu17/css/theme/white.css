@@ -66,6 +66,9 @@ body {
 .reveal h3.big-subtitle{
   font-size: 80px;
   color: rgba(255, 28, 0, 0.67);
+  width: 59%;
+  display: block;
+  margin: 0 auto;
 }
 
 .reveal h4 {
